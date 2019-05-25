@@ -1,0 +1,39 @@
+<h4>Basic mat-select</h4>
+<mat-form-field>
+  <mat-label>Favorite food</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let food of foods" [value]="food.value">
+      {{food.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<h4>Basic native select</h4>
+<mat-form-field>
+  <mat-label>Cars</mat-label>
+   <mat-select (selectionChange)="callSomeFunction()" placeholder="Select DataSource"
+                          >
+                 <mat-option value="volvo">Volvo</mat-option>
+    <mat-option value="saab">Saab</mat-option>
+    <mat-option value="mercedes">Mercedes</mat-option>
+    <mat-option value="audi">Audi</mat-option>
+              </mat-select>
+ 
+</mat-form-field>
+ <h2>Cursor Position : {{caretPos}}</h2>
+  <!-- <div>
+    <mat-textarea rows="4" #myTextArea (click)="getCaretPos(myTextArea)" (keyup)="getCaretPos(myTextArea)" cols="40" >Sample Text Here, Place cursor here</mat-textarea>
+  </div> -->
+<form class="example-form">
+  <!-- <mat-form-field class="example-full-width">
+    <input #myTextArea (click)="getCaretPos(myTextArea)" (keyup)="getCaretPos(myTextArea)" matInput placeholder="Favorite food" value="Sushi">
+  </mat-form-field> -->
+
+  <!-- <mat-form-field class="example-full-width"> -->
+    <textarea id="1" rows="4" #myTextArea (click)="getCaretPos(myTextArea)" (keyup)="getCaretPos(myTextArea)" cols="40"  matInput placeholder="Leave a comment" value="Sample Text Here, Place cursor here"></textarea>
+  <!-- </mat-form-field> -->
+</form>
+
+<!-- Copyright 2019 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
